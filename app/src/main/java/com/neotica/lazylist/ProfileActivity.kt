@@ -20,9 +20,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import com.neotica.lazylist.data.model.PersonEntity
 import com.neotica.dicoding2.ui.theme.MyTheme
 import com.neotica.lazylist.ProfileScreen
+import com.neotica.lazylist.Topbar1
 
 class ProfileActivity : ComponentActivity() {
 
@@ -48,3 +51,9 @@ class ProfileActivity : ComponentActivity() {
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun Preview(){
+    MyTheme() {
+    }
+}

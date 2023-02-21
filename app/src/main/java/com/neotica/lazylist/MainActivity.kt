@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.neotica.dicoding2.ProfileActivity
 import com.neotica.dicoding2.R
@@ -54,13 +55,19 @@ fun Topbar1(){
             title = {
                 Text(text = "Home")
             },
-
             actions = {
                 val context = LocalContext.current
                 Image(
                     painter = painterResource(R.drawable.ic_profile), contentDescription = null,
                     modifier = Modifier
-                        .clickable { context.startActivity(Intent(context, DicodingProfile::class.java)) }
+                        .clickable {
+                            context.startActivity(
+                                Intent(
+                                    context,
+                                    DicodingProfile::class.java
+                                )
+                            )
+                        }
                         .padding(8.dp)
                         .size(84.dp)
                         .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
@@ -80,7 +87,6 @@ fun Topbar2(){
             title = {
                // Text(text = "Home")
             },
-
             navigationIcon = {
                 val context = LocalContext.current as? Activity
                 Image(
@@ -99,15 +105,8 @@ fun Topbar2(){
     }
 }
 
-/*
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-
-    }
-}*/
+fun Preview(){
+    Topbar1()
+}
