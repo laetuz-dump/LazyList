@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -18,15 +19,21 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Divider
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.TopCenter
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,64 +48,38 @@ class DicodingProfile : ComponentActivity() {
             Dicoding2Theme {
                 // A surface container using the 'background' color from the theme
                 Scaffold() {
-                    Column(modifier = Modifier.fillMaxSize()) {
+                    Column(
+                       horizontalAlignment = Alignment.CenterHorizontally,
+                       verticalArrangement = Arrangement.Center
+                    ) {
                         TopBarProfile()
-                        BoxWithConstraints(
-                            Modifier
-                                .height(685.dp)
-                                .align(CenterHorizontally)
-                                .background(androidx.compose.ui.graphics.Color.Black)
-                        ) {
-                            Column(
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .verticalScroll(ScrollState(1)),
-                                horizontalAlignment = CenterHorizontally
-                            ) {
-                                Box(
-                                    Modifier
-                                        .height(690.dp)
-                                ) {
-                                    Column(horizontalAlignment = CenterHorizontally) {
-                                        Box(contentAlignment = TopCenter) { ProfPic() }
-
-                                        Box(modifier = Modifier.padding(20.dp)) {
-                                            Text(
-                                                modifier = Modifier
-                                                    .height(10.dp)
-                                                    .padding(10.dp)
-                                                    .aspectRatio(5.5f),
-                                                text = "Nama: ",
-                                                color = androidx.compose.ui.graphics.Color.White,
-                                                fontSize = 18.sp,
-                                                textAlign = TextAlign.Left
-                                            )
-                                            Text(
-                                                text = "Ryo Martin Sopian",
-                                                color = androidx.compose.ui.graphics.Color.White,
-                                                fontSize = 30.sp,
-                                            )
-                                        }
-                                        Box(modifier = Modifier.padding(20.dp)) {
-                                            Text(
-                                                modifier = Modifier
-                                                    .height(10.dp)
-                                                    .padding(10.dp)
-                                                    .aspectRatio(5.5f),
-                                                text = "Email: ",
-                                                color = androidx.compose.ui.graphics.Color.White,
-                                                fontSize = 18.sp,
-                                                textAlign = TextAlign.Left
-                                            )
-                                            Text(
-                                                text = "laetuzg@gmail.com",
-                                                color = androidx.compose.ui.graphics.Color.White,
-                                                fontSize = 30.sp,
-                                            )
-                                        }
-                                    }
-                                }
-                            }
+                        Column(horizontalAlignment = CenterHorizontally) {
+                            Box(contentAlignment = Center) { ProfPic() }
+                            Divider()
+                            Text(
+                                text = "Nama: ",
+                                modifier = Modifier.baselineHeight(24.dp),
+                                style = MaterialTheme.typography.caption
+                            )
+                            Text(
+                                text = "Ryo Martin Sopian",
+                                modifier = Modifier.baselineHeight(28.dp),
+                                style = MaterialTheme.typography.h5,
+                                fontWeight = FontWeight.Bold,
+                            )
+                            Divider()
+                            Text(
+                                text = "Email: ",
+                                modifier = Modifier.baselineHeight(24.dp),
+                                style = MaterialTheme.typography.caption
+                            )
+                            Text(
+                                text = "laetuzg@gmail.com",
+                                modifier = Modifier.baselineHeight(28.dp),
+                                style = MaterialTheme.typography.h5,
+                                fontWeight = FontWeight.Bold,
+                            )
+                            Divider()
                         }
                     }
                 }
