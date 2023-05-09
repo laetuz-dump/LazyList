@@ -22,7 +22,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name="com.neotica.lazylist.ProfileActivity"
             android:exported="true" />
         <activity
             android:name="com.neotica.lazylist.MainActivity"
