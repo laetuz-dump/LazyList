@@ -1,4 +1,4 @@
-package com.neotica.lazylist
+package com.neotica.lazylist.ui.screen.artists
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

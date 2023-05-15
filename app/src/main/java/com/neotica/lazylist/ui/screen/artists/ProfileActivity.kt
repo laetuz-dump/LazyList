@@ -1,4 +1,4 @@
-package com.neotica.lazylist
+package com.neotica.lazylist.ui.screen.artists
 
 import android.content.Context
 import android.content.Intent
@@ -10,24 +10,24 @@ import com.neotica.dicoding2.ui.theme.MyTheme
 
 class ProfileActivity : ComponentActivity() {
 
-    private val puppy: PersonEntity by lazy {
-        intent?.getSerializableExtra(PUPPY_ID) as PersonEntity
+    private val entity: PersonEntity by lazy {
+        intent?.getSerializableExtra(SINGER_ID) as PersonEntity
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                ProfileScreen(puppy)
+                ArtistDetail(entity)
             }
         }
     }
 
     companion object {
-        private const val PUPPY_ID = "puppy_id"
+        private const val SINGER_ID = "singer_id"
         fun newIntent(context: Context, personEntity: PersonEntity) =
             Intent(context, ProfileActivity::class.java).apply {
-                putExtra(PUPPY_ID, personEntity)
+                putExtra(SINGER_ID, personEntity)
             }
     }
 }

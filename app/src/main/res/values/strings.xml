@@ -4,8 +4,7 @@
     <string name="more_options">More</string>
     <string name="name">Name</string>
     <string name="personality">Personality</string>
-    <string name="adopt_me">Adopt Me</string>
-    <string name="sex">Sex</string>
+    <string name="sex">Gender</string>
     <string name="age">Age</string>
     <string name="title_activity_dicoding_profile">DicodingProfile</string>
 </resources>

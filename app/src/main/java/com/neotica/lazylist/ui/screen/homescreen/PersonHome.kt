@@ -1,4 +1,4 @@
-package com.neotica.lazylist
+package com.neotica.lazylist.ui.screen.homescreen
 
 import android.content.Intent
 import androidx.compose.foundation.Image
@@ -19,8 +19,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.neotica.dicoding2.R
+import com.neotica.lazylist.ui.screen.artists.PersonListItemView
 import com.neotica.lazylist.data.DataProvider
 import com.neotica.lazylist.data.model.PersonEntity
+import com.neotica.lazylist.ui.screen.dicodingprofile.DicodingProfile
 
 @Composable
 fun HomeScreen(navigateToProfile: (PersonEntity) -> Unit) {
@@ -56,7 +58,7 @@ fun TopBarHome() {
             actions = {
                 val context = LocalContext.current
                 Image(
-                    painter = painterResource(R.drawable.ic_profile), contentDescription = null,
+                    painter = painterResource(R.drawable.ic_profile), contentDescription = "about_page",
                     modifier = Modifier
                         .clickable {
                             context.startActivity(

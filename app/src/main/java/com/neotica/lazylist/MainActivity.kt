@@ -7,6 +7,8 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import com.neotica.dicoding2.ui.theme.Dicoding2Theme
 import com.neotica.lazylist.data.model.PersonEntity
+import com.neotica.lazylist.ui.screen.homescreen.HomeScreen
+import com.neotica.lazylist.ui.screen.artists.ProfileActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

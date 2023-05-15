@@ -1,4 +1,4 @@
-package com.neotica.lazylist
+package com.neotica.lazylist.ui.screen.artists
 
 import android.app.Activity
 import androidx.compose.foundation.*
@@ -21,11 +21,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.neotica.dicoding2.R
+import com.neotica.lazylist.ui.theme.baselineHeight
 import com.neotica.lazylist.data.DataProvider
 import com.neotica.lazylist.data.model.PersonEntity
 
 @Composable
-fun ProfileScreen(person: PersonEntity) {
+fun ArtistDetail(person: PersonEntity) {
     val scrollState = rememberScrollState()
 
     Column(
@@ -34,7 +35,7 @@ fun ProfileScreen(person: PersonEntity) {
             .background(color = Color.Black)
     ) {
         Column {
-            TopBarProfile()
+            TopBarList()
             BoxWithConstraints(modifier = Modifier.weight(1f)) {
                 Box {
                     Surface {
@@ -58,11 +59,11 @@ fun ProfileScreen(person: PersonEntity) {
 }
 
 @Composable
-fun TopBarProfile() {
+fun TopBarList() {
     Column {
         TopAppBar(
             title = {
-                Text(text = "Profile")
+                Text(text = "Detail")
             },
             navigationIcon = {
                 val context = LocalContext.current as? Activity
@@ -166,5 +167,5 @@ fun ProfileProperty(label: String, value: String, isLink: Boolean = false) {
 @Composable
 fun ProfilePreview() {
     val artist = DataProvider.person
-    ProfileScreen(person = artist)
+    ArtistDetail(person = artist)
 }
